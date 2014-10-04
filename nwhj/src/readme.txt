@@ -1,12 +1,13 @@
- �ں����ӿͻ��������ڿ⣺
+ 内涵段子客户端依赖内库：
 		PullToRefresh
-		Gif�����Ĳ���   ��
-				 1.Movie�࣬��Android�Դ���API�� ����gif�ļ���ÿһ֡���������
-				 2.ʹ�õ������⣬��GifView��������gif�ļ��Ĳ��ſؼ�
-				 3.��WebView����gif�Ĳ��� 
-		�ļ��ϴ�   HttpClient + HttpMime
+		Gif动画的播放   ？
+				 1.Movie类，（Android自带的API） 。把gif文件的每一帧解码出来。
+				 2.使用第三方库，如GifView或者其他gif文件的播放控件
+				 3.用WebView进行gif的播放 
+		文件上传   HttpClient + HttpMime
 		Volley
-		�������������ShareSDK
+		第三方分享类库ShareSDK
+				5种分享 ， 7个jar包
 		
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
