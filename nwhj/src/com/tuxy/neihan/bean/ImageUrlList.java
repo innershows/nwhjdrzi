@@ -29,7 +29,11 @@ public class ImageUrlList {
 		return height;
 	}
 
-	public void parse(JSONObject json) throws JSONException {
+	public void parseJson(JSONObject json) throws JSONException {
+		if (json == null) {
+			return;
+		}
+
 		largeImageUrls = parseImageUrlList(json);
 		uri = json.getString("uri");
 		width = json.getInt("width");

@@ -17,8 +17,6 @@ import com.tuxy.test.TestActivity;
  */
 public class ClientAPI {
 
-	
-	
 	/**
 	 * 获取内涵段子列表内容
 	 * 
@@ -26,11 +24,14 @@ public class ClientAPI {
 	 *            要获取的参数类型
 	 * @param itemCount
 	 *            服务器一次传回来的条目数
+	 * @param minTime
+	 *            用于分页加载数据， 或者是下拉刷新时用，代表的是上一次服务器返回的时间信息
 	 * @see TestActivity#CATEGORY_TEXT
 	 * @see TestActivity#CATEGORY_IMAGE
 	 */
 	public static void getList(RequestQueue queue, int categoryType,
-			int itemCount, Response.Listener<String> responseListener) {
+			int itemCount, long minTime,
+			Response.Listener<String> responseListener) {
 		// TODO 测试内涵段子列表接口， 获取文本列表
 		String CATEGORY_LIST_API = "http://ic.snssdk.com/2/essay/zone/category/data/";
 
@@ -50,7 +51,9 @@ public class ClientAPI {
 				+ "&"
 				+ openUDIDParam
 				+ "&level=6&iid=2335870100&device_id=2718056496&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&os_api=17&os_version=4.2.2&uuid=359209028606337";
-
+		if (minTime > 0) { // 对应分页的参数。
+			url = url + "&min_time=" + minTime;
+		}
 		queue.add(new StringRequest(Request.Method.GET, url, responseListener,
 				new ErrorListener() {
 					@Override
@@ -60,6 +63,36 @@ public class ClientAPI {
 					}
 				}));
 		queue.start();
+	}
+
+	/**
+	 * 获取评论列表
+	 * 
+	 * @param queue
+	 * @param listener
+	 * @param groupId
+	 * @param offset
+	 */
+	public static void getComments(RequestQueue queue,
+			Response.Listener<String> listener, long groupId, int offset) {
+		String COMMENT_API = "http://isub.snssdk.com/2/data/get_essay_comments/";
+		String goupIdParam = "group_id=" + groupId;
+		String offSetParam = "offset=" + offset;
+		String url = COMMENT_API
+				+ "?"
+				+ goupIdParam
+				+ "&"
+				+ offSetParam
+				+ "&count=20&iid=2337593504&device_id=2757969807&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=KFTT&os_api=15&os_version=4.0.3&openudid=b90ca6a3a19a78d6";
+
+		queue.add(new StringRequest(Method.GET, url, listener,
+
+		new Response.ErrorListener() {
+			@Override
+			public void onErrorResponse(VolleyError arg0) {
+				// TODO Auto-generated method stub
+			}
+		}));
 	}
 
 }

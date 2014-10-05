@@ -1,0 +1,5 @@
+ 1 .文本段子ID ：3573681904
+ 2 .图片段子ID ：3564715366
+ 
+http://isub.snssdk.com/2/data/get_essay_comments/?group_id=3550036269&count=20&offset=0&iid=2337593504&device_id=2757969807&ac=wifi&channel=wandoujia&aid=7&app_name=joke_essay&version_code=302&device_platform=android&device_type=KFTT&os_api=15&os_version=4.0.3&openudid=b90ca6a3a19a78d6
+ 
