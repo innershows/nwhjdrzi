@@ -52,12 +52,13 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		// TODO Auto-generated method stub
+
 		int childCount = group.getChildCount();// 获取当前有多少个
 		int checkIndex = 0;
 		RadioButton btn = null;
 		for (int index = 0; index < childCount; index++) {
 			btn = (RadioButton) group.getChildAt(index);
-			if (btn.isChecked()) {
+			if (btn.isChecked()) { // 获取状态
 				checkIndex = index;
 				break;
 			}
@@ -67,7 +68,7 @@ public class MainActivity extends FragmentActivity implements
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.main_fragment_container, fragment).commit();
 
-		// switch (checkedId) {
+		// switch (checkedIndex) {
 		// case 0:
 		//
 		// break;
