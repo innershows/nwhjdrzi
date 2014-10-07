@@ -1,5 +1,6 @@
 package com.tuxy.neihan.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,11 @@ import org.json.JSONObject;
  * @author Innershows
  * 
  */
-public class EntityList {
+public class EntityList implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4492275584710685320L;
 	private boolean hasMore;
 	private long minTime;
 	private String tip;
@@ -47,8 +52,8 @@ public class EntityList {
 		JSONArray jsonArray = json.getJSONArray("data");
 		int len = jsonArray.length();
 		// 遍历数组中的每一条段子信息
-
 		for (int i = 0; i < len; i++) {
+
 			JSONObject item = jsonArray.getJSONObject(i);
 			// ImageEntity imageEntity = new ImageEntity();
 			// imageEntity.parseJson(item);

@@ -1,5 +1,7 @@
 package com.tuxy.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,7 +10,12 @@ import org.json.JSONObject;
  * 
  * @author Innershows
  */
-public class UserEntity {
+public class UserEntity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5038518746873162930L;
+
 	/**
 	 * 头像网址
 	 */

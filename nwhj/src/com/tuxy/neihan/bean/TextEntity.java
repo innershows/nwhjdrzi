@@ -1,5 +1,7 @@
 package com.tuxy.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -9,15 +11,28 @@ import org.json.JSONObject;
  * @author Innershows
  */
 
-public class TextEntity {
+public class TextEntity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6948303332454248821L;
+
 	private int type;
 
 	private long createTime;
+
+	public long getCreateTime() {
+		return createTime;
+	}
 
 	/**
 	 * 代表赞的个数
 	 */
 	private int favoriteCount;
+
+	public int getFavoriteCount() {
+		return favoriteCount;
+	}
 
 	/**
 	 * 代表当前用户是否踩了， 0代表没有 ， 1 代表踩了。
@@ -256,7 +271,7 @@ public class TextEntity {
 		this.level = group.getInt("level");
 		this.repinCount = group.getInt("repin_count");
 		this.diggCount = group.getInt("digg_count");
-		this.hasHotComments = group.optInt("has_hot_comments",0);
+		this.hasHotComments = group.optInt("has_hot_comments", 0);
 		this.userRepin = group.getInt("user_repin");
 		this.categoryId = group.getInt("category_id");
 

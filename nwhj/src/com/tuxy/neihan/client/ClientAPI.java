@@ -30,7 +30,7 @@ public class ClientAPI {
 	 * @see TestActivity#CATEGORY_IMAGE
 	 */
 	public static void getList(RequestQueue queue, int categoryType,
-			int itemCount, long minTime,
+			int itemCount, long minTime, long maxTime,
 			Response.Listener<String> responseListener) {
 		// TODO 测试内涵段子列表接口， 获取文本列表
 		String CATEGORY_LIST_API = "http://ic.snssdk.com/2/essay/zone/category/data/";
@@ -54,6 +54,10 @@ public class ClientAPI {
 		if (minTime > 0) { // 对应分页的参数。
 			url = url + "&min_time=" + minTime;
 		}
+		if (maxTime < minTime && maxTime != 0) {
+			url = url + "&max_time=" + maxTime;
+		}
+
 		queue.add(new StringRequest(Request.Method.GET, url, responseListener,
 				new ErrorListener() {
 					@Override

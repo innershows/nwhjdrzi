@@ -1,5 +1,6 @@
 package com.tuxy.neihan.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ImageUrlList {
+public class ImageUrlList implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7376788747767985633L;
 	private List<String> largeImageUrls;
 	private String uri;
 	private int width;

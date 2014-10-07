@@ -1,5 +1,7 @@
 package com.tuxy.neihan.bean;
 
+import java.io.Serializable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -9,7 +11,12 @@ import org.json.JSONObject;
  * @author Innershows
  * 
  */
-public class AdEntity {
+public class AdEntity implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2723839210841251360L;
+
 	/**
 	 * 类型， 类型为5
 	 */

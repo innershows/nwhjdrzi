@@ -22,7 +22,7 @@
         <com.handmark.pulltorefresh.library.PullToRefreshListView
             android:id="@+id/textlist_listview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent" >
         </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
         <!-- 快速工具条 -->
